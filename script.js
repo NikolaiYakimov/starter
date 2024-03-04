@@ -266,49 +266,190 @@
 
 //OBJECTS METHODS
 
-const jonas = {
-  firstName: "Georgi",
-  lastName: "Stankov",
-  birthYear: 2002,
-  job: "programmer",
-  friends: ["Ivan", " Nikolay", "Yordan"],
-  hasDriverLicense: false,
-  // calcAge: function (birthYear) {
-  //   const date = new Date();
-  //   return date.getFullYear() - birthYear;
-  // },
-  //this is bad practice when we need this time more times
+// const jonas = {
+//   firstName: "Georgi",
+//   lastName: "Stankov",
+//   birthYear: 2002,
+//   job: "programmer",
+//   friends: ["Ivan", " Nikolay", "Yordan"],
+//   hasDriverLicense: false,
+// };
+// calcAge: function (birthYear) {
+//   const date = new Date();
+//   return date.getFullYear() - birthYear;
+// },
+//this is bad practice when we need this time more times
 
-  // calcAge: function () {
-  //   //this will show us the object
-  //   console.log(this);
-  //   const date = new Date();
-  //   return date.getFullYear() - this.birthYear;
-  // },
+// calcAge: function () {
+//   //this will show us the object
+//   console.log(this);
+//   const date = new Date();
+//   return date.getFullYear() - this.birthYear;
+// },
 
-  //this is how it needs to be  to take less time (i think),because the other one is havier computation, and in this way we create property in jonas obeject with name age,we can use dot notation to create new property like we did here
-  calcAge: function () {
-    const date = new Date();
-    this.age = date.getFullYear() - this.birthYear;
-    return this.age;
-  },
-  //It's good here to use calcAge because we don't know did we call it before we use this method
-  getSummery: function () {
-    return `${this.firstName}  is a ${this.calcAge()} old ${
-      this.job
-    } , and he has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
-  },
-};
+//this is how it needs to be  to take less time (i think),because the other one is havier computation, and in this way we create property in jonas obeject with name age,we can use dot notation to create new property like we did here
+// calcAge: function () {
+//   const date = new Date();
+//   this.age = date.getFullYear() - this.birthYear;
+//   return this.age;
+// },
+//It's good here to use calcAge because we don't know did we call it before we use this method
+//   getSummery: function () {
+//     return `${this.firstName}  is a ${this.calcAge()} old ${
+//       this.job
+//     } , and he has ${this.hasDriverLicense ? "a" : "no"} driver's license`;
+//   },
+// };
 
 // console.log(jonas.calcAge(jonas.birthYear));
 // console.log(jonas["calcAge"](2003));
 
-console.log(jonas.calcAge());
+// console.log(jonas.calcAge());
 
 // And now here we can use age instead calcAge()
-console.log(jonas.age);
+// console.log(jonas.age);
 
 //Challenge
 //Make method that write this summery
 //Jonas is a 46-years old teacher ,and he has a or not driver licens
-console.log(jonas.getSummery());
+// console.log(jonas.getSummery());
+
+//LOOPS
+
+// const jonas = [
+//   "Georgi",
+//   "Stankov",
+//   2002,
+//   "programmer",
+//   ["Ivan", " Nikolay", "Yordan"],
+//   false,
+// ];
+
+// for (let i = 0; i < 10; i++) {
+//   console.log(`Lifting weights repetition ${i + 1}'s`);
+// }
+// console.log("--------------------------------------------------------");
+// const friends = ["Ivan", "Nikolay", "Yordan", "Stoian", "Ilia"];
+// const newLenght = friends.push("Veselin", "Dimitur");
+
+// for (let i = 0; i < friends.length; i++) {
+//   console.log(`Hi my name is ${friends[i]} `);
+// }
+// console.log("--------------------------------------------------------");
+
+// for (let i = 0; i < friends.length; i++) {
+//   if (friends[i] === "Ilia") break;
+//   console.log(`Hi my name is ${friends[i]} `);
+// }
+// console.log("--------------------------------------------------------");
+// for (let i = 0; i < friends.length; i++) {
+//   if (friends[i] === "Ilia") continue;
+//   console.log(`Hi my name is ${friends[i]} `);
+// }
+
+// //We create a new array of the types of the element in jonas array
+// const types = [];
+// console.log("--------------------------------------------------------");
+// for (let i = 0; i < jonas.length; i++) {
+//   console.log(jonas[i], typeof jonas[i]);
+//   //one of this two ways to fill the array
+//   // type[i]=typeof jonas[i];
+//   types.push(typeof jonas[i]);
+// }
+
+// for (let i = 0; i < types.length; i++) {
+//   console.log(types[i]);
+// }
+
+// //Another operation with arrays and loops
+// const years = new Array(2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009);
+// const age = [];
+// for (let i = 0; i < years.length; i++) {
+//   age.push(2024 - years[i]);
+// }
+
+// console.log(age);
+// console.log("--------ONLY STRINGS--------");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== "string") {
+//     continue;
+//   }
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// console.log("--------BREAK WITH NUMBERS--------");
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] === "number") {
+//     break;
+//   }
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// const nikolay = [
+//   "Georgi",
+//   "Stankov",
+//   2002,
+//   "programmer",
+//   ["Ivan", " Nikolay", "Yordan"],
+// ];
+// console.log(nikolay);
+// //this is how to print the array backwards
+// //if we start from nikolay.length the first el will be undifined
+
+// for (let i = nikolay.length - 1; i >= 0; i--) {
+//   console.log(nikolay[i]);
+// }
+
+// //LOOP IN LOOP
+
+// for (let exc = 0; exc < 3; exc++) {
+//   console.log(
+//     `----------------Starting exercise ${exc + 1}------------------------`
+//   );
+//   for (let rep = 0; rep < 5; rep++) {
+//     console.log(`We are doing exc ${exc + 1} at ${rep + 1} repetitions`);
+//   }
+// }
+
+//While loop exc
+
+// let i = 0;
+// while (i < 10) {
+//   console.log(`Lifting weights repetitions: ${i + 1}`);
+//   i++;
+// }
+
+//Well now here Math.random give us number between 0 and 1,and we multiply it by 6, and after that add 1,because we want dice who have six 6-sides ,and after that we use Math.trunc  to remove the decimal part of the random number
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+// while (dice !== 6) {
+//   console.log(`You get: ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log(`You win,You get: ${dice}`);
+// }
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills = new Array(22, 295, 176, 440, 37, 105, 10, 1100, 86, 52);
+const tips = new Array();
+const totals = new Array();
+
+for (let i = 0; i < bills.length; i++) {
+  const tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+}
+console.log("------------------------Tips------------------");
+console.log(totals);
+
+const calcAvera = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+};
